@@ -90,7 +90,7 @@ function putData() {
 	var fuel_type = document.getElementById("fuel_type").value;
 	var fuel_capacity = document.getElementById("fuel_capacity").value;
 	var economy = document.getElementById("economy").value;
-	console.log(_id);
+	console.log(id);
 	
 	data = {_id: _id, brand: brand, model: model, year: year, price: price, fuel_type: fuel_type, fuel_capacity: fuel_capacity, economy: economy};
 	
