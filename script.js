@@ -1,4 +1,4 @@
-const api_url = "https://prashant158.herokuapp.com/car"
+const api_url = "http://prashant158.herokuapp.com/car"
 //const api_url = "http://localhost:8085/car"
 
 function loadData(records = []) {
@@ -39,6 +39,7 @@ function getDataById(id) {
 	.then((data) => { 
 	
 		console.log(data);
+		console.log(id);
 		document.getElementById("id").value = data._id;
 		document.getElementById("brand").value = data.brand;
 		document.getElementById("model").value = data.model;
@@ -47,6 +48,7 @@ function getDataById(id) {
 		document.getElementById("fuel_type").value = data.fuel_type;
 		document.getElementById("fuel_capacity").value = data.fuel_capacity;
 		document.getElementById("economy").value = data.economy;
+
 	})
 }
 
@@ -88,6 +90,7 @@ function putData() {
 	var fuel_type = document.getElementById("fuel_type").value;
 	var fuel_capacity = document.getElementById("fuel_capacity").value;
 	var economy = document.getElementById("economy").value;
+	console.log(_id);
 	
 	data = {_id: _id, brand: brand, model: model, year: year, price: price, fuel_type: fuel_type, fuel_capacity: fuel_capacity, economy: economy};
 	
@@ -109,7 +112,8 @@ function putData() {
 
 function deleteData(id) {
 	user_input = confirm("Are you sure you want to delete this record?");
-	if(user_input) {
+	if(user_input)		{
+		console.log(id);
 		fetch(api_url, {
 			method: "DELETE",
 			headers: {
