@@ -1,5 +1,5 @@
-const api_url = "https://prashant158.herokuapp.com/car"
-//const api_url = "http://localhost:8085/car"
+//const api_url = "https://prashant158.herokuapp.com/car"
+const api_url = "http://localhost:8085/car"
 
 function loadData(records = []) {
 	var table_data = "";
@@ -36,18 +36,22 @@ function getData() {
 function getDataById(id) {
 	fetch(`${api_url}/${id}`)
 	.then((response) => response.json())
-	.then((data) => { 
+	.then((data) => {
 	
+		console.log(data._id);
+		console.log("hello");
 		console.log(data);
-		console.log(id);
 		document.getElementById("id").value = data._id;
-		document.getElementById("brand").value = data.brand;
-		document.getElementById("model").value = data.model;
-		document.getElementById("year").value = data.year;
-		document.getElementById("price").value = data.price;
-		document.getElementById("fuel_type").value = data.fuel_type;
-		document.getElementById("fuel_capacity").value = data.fuel_capacity;
-		document.getElementById("economy").value = data.economy;
+		document.getElementById("brand").value=data.brand;
+document.getElementById("model").value=data.model;
+	document.getElementById("year").value=data.year;
+	document.getElementById("price").value=data.price;
+document.getElementById("fuel_type").value=data.fuel_type;
+ document.getElementById("fuel_capacity").value=data.fuel_capacity;
+ document.getElementById("economy").value=data.economy;
+	
+
+	
 
 	})
 }
