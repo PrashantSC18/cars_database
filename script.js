@@ -43,16 +43,12 @@ function getDataById(id) {
 		console.log(data);
 		document.getElementById("id").value = data._id;
 		document.getElementById("brand").value=data.brand;
-document.getElementById("model").value=data.model;
-	document.getElementById("year").value=data.year;
-	document.getElementById("price").value=data.price;
-document.getElementById("fuel_type").value=data.fuel_type;
- document.getElementById("fuel_capacity").value=data.fuel_capacity;
- document.getElementById("economy").value=data.economy;
-	
-
-	
-
+		document.getElementById("model").value=data.model;
+		document.getElementById("year").value=data.year;
+		document.getElementById("price").value=data.price;
+		document.getElementById("fuel_type").value=data.fuel_type;
+		document.getElementById("fuel_capacity").value=data.fuel_capacity;
+		document.getElementById("economy").value=data.economy;
 	})
 }
 
